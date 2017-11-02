@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+img {
+    border-radius: 50%;
+}
+
+#back {
+    width: 330px;
+    height: 500px;
+    background: #000;
+    margin: 50px auto;
+    padding: 50px 50px 0;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.8;
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 200px;
+    font-size: 50px;
+}
+
+h1 a {
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    width: 330px;
+    height: 500px;
+    background: #aeaeae;
+    margin: 50px auto;
+    padding: 50px 50px 0;
+}
+
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.main {
+    width: 300px;
+    margin: 80px auto 20px;
+    /* background: orange; */
+    text-align: center;
+}
+
+.list1 {
+    width: 100%;
+}
+
+.list1>img {
+    width: 100%;
+    display: block;
+}
+
+button {
+    text-align: center;
+    line-height: 60px;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(#59AD42, #319428);
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    animation: jitter 1.5s infinite linear;
+    -webkit-animation: jitter 1.5s infinite linear;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(#319428, #59AD42);
+}
+
+#turnOff {
+    float: right;
+    margin-right: -48px;
+    margin-top: 10px;
+}
+
+#turnOff:hover::after {
+    content: attr(data-info);
+    position: absolute;
+    background-color: black;
+    color: #fff;
+    width: 150px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#turnOff img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    cursor: pointer;
+}
+
+@keyframes jitter {
+    0% {
+        width: 175px;
+        height: 55px;
+    }
+    50% {
+        width: 177px;
+        height: 57px;
+    }
+    100% {
+        width: 180px;
+        height: 60px;
+    }
+}
+
+
+
+.ul-square {
+    height: 300px;
+    width: 300px;
+    margin: 100px auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 5s;
+}
+
+.public-li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(1.5);
+}
+
+.square1 {
+    background-color: pink;
+    height: 100%;
+    width: 100%;
+    /*顶面*/
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.square2 {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    /*底面都是面朝大家*/
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+.square3 {
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+    /*左面*/
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.square4 {
+    background-color: purple;
+    height: 100%;
+    width: 100%;
+    /*右面*/
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.square5 {
+    /* background-color: orange; */
+    height: 100%;
+    width: 100%;
+    /*前面*/
+    transform: translateZ(150px);
+}
+
+.square6 {
+    background-color: skyblue;
+    height: 100%;
+    width: 100%;
+    /*后面*/
+    transform: rotateY(180deg) translateZ(150px);
+}
+/* .ul-square:hover {
+    transform: rotateX(360deg) rotateY(360deg);
+} */
+.crazyRotate, .revertRotate{
+    border: 1px solid black;
+    cursor: pointer;
+}
+  .rotate {
+    animation: crazyRotate 5s infinite linear;
+    -webkit-animation: crazyRotate 5s infinite linear;
+}
+
+@keyframes crazyRotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* arrow */
+
+.wrap {
+    width: 760px;
+    position: relative;
+    margin: 0 auto;
+    /*相对于自己位置移动*/
+    top: -220px;
+}
+
+.wrap a {
+    height: 100px;
+    width: 100px;
+    background-color: skyblue;
+    line-height: 100px;
+    text-align: center;
+    float: left;
+    text-decoration: none;
+}
+
+.wrap a:nth-child(1) {
+    float: right;
+}

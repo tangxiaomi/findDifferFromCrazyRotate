@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./base.css" />
+</head>
+
+<body>
+    <div id="back">
+        <h1>
+            <a href="" class="restart">重新开始</a>
+        </h1>
+    </div>
+    <div class="container">
+        <div class="left">
+            <span>剩余时间: </span>
+            <span id="sec"> 30 </span> s </div>
+        <div class="right">
+            <span>分数: </span>
+            <span id="score">0</span>
+        </div>
+        <div class="main">
+            <ul class="ul-square">
+                <li class="square1 public-li"></li>
+                <li class="square2 public-li"></li>
+                <li class="square3 public-li"></li>
+                <li class="square4 public-li"></li>
+                <li class="square5 public-li">
+                    <ul class="differSquare">
+                        <li class="list1">
+                            <img src="img/2.png" alt="">
+                        </li>
+                    </ul>
+                </li>
+                <li class="square6 public-li"></li>
+            </ul>
+            <span id="turnOff" data-info="打开护眼模式">
+                <img src="img/eye.png" alt="">
+            </span>
+        </div>
+        <button class="startGame">点 击 开 始</button>
+    </div>
+    <span class="crazyRotate">
+        增加难度
+    </span>
+    <span class="revertRotate">
+            一般难度
+    </span>
+    <script src="./logic.js"></script>
+</body>
+
+</html>

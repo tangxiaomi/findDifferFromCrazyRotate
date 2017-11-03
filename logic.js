@@ -16,6 +16,7 @@ var score = document.getElementById("score");
 var back = document.getElementById("back");
 var crazyRotate = document.querySelector(".crazyRotate");
 var revertRotate =document.querySelector(".revertRotate");
+
 //护眼模式的逻辑
 var turnOff = document.getElementById("turnOff");
 var openLightFlag = false;
@@ -38,32 +39,35 @@ revertRotate.onclick = function(){
     ulSquare.className = "ul-square";
 }
 btn.onclick = function () {
-    // 1.计时器
+    // 计时器
     timer = setInterval(function () {
         z -= 0.01;
         z = z.toFixed(2);
         sec.innerHTML = z;
         if (z <= 0) {
             clearInterval(timer);
-            if (n < 3) {
-                alert("GAME OVER!" + "  " + "等级:睁眼瞎");
+            if (n < 5) {
+                alert("GAME OVER!"+ "     " + "Grade: Poor eyesight");
+                restart.innerHTML = "Fighting!<br>Restart"
             } else if (n >= 20) {
-                alert("GAME OVER!" + "  " + "等级:超神");
-            } else if (n >= 4) {
-                alert("GAME OVER!" + "  " + "等级:火眼金睛");
+                alert("GAME OVER!" + "    " + "Grade: Super God");
+                restart.innerHTML = "Unbelievable😊!<br>Restart"
+            } else if (n >= 8) {
+                alert("GAME OVER!" + "    " + "Grade: Eye of fire");
+                restart.innerHTML = "You are wonderful👍!<br>Restart"
             } else {
-                alert("GAME OVER!" + "  " + "等级:高度近视");
+                alert("GAME OVER!" + "    " + "Grade: A little bad eyesight");
+                restart.innerHTML = "Keep it up🙂!<br>Restart"
             }
             back.style.display = "block";
         }
     }, 10)
-    // 2.点击按钮消失,第一个li消失
+    // 点击按钮消失,第一个li消失
     btn.remove();
     li_1.remove();
     turnOff.remove();
-    // 3.添加4个li>img
     app();
-
+  //添加新的元素
     function app() {
         clearInterval(obstacleInterval);
         level += 1;
@@ -79,18 +83,18 @@ btn.onclick = function () {
             newLi.style.zIndex = 9999;
             newImg.style.display = "block";
             newImg.style.width = 100 + "%";
-            newImg.src = "img/1.png";
+            newImg.src = "img/cherry.png";
             newLi.style.backgroundColor = "rgb(" + rand(50, 255) + "," + rand(50, 255) + "," + rand(50, 255) +
                 ")";
         }
         var x = rand(0, level * level - 1);
         var imgs1 = document.querySelectorAll("img");
-        imgs1[x].src = "img/2.png";
+        imgs1[x].src = "img/banana.png";
         var li = document.querySelectorAll("#value");
 
-        //当你的正确率达到6个的时候，将会出现障碍
+        //当你的正确率达到7个的时候，将会出现闪烁障碍
         var select;
-        if (n > 5) {
+        if (n > 6) {
             score.style.color="black";
             obstacleInterval = setInterval(function () {
                 if (select) select.style.backgroundColor = "rgb(" + rand(50, 255) + "," + rand(50,
@@ -114,9 +118,7 @@ btn.onclick = function () {
                     }
                     score.innerHTML = n;
                     if (n <= 0) {
-                        // clearInterval(timer);
                         back.style.display = "block";
-                        // restart.innerHTML = "您的分数是0，请重新开始";
                     }
                 }
             }
@@ -137,8 +139,7 @@ btn.onclick = function () {
 }
 
 
-
-// 随机函数
+// 创建随机数
 function rand(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }

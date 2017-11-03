@@ -11,15 +11,15 @@
 <body>
     <div id="back">
         <h1>
-            <a href="" class="restart">重新开始</a>
+            <a href="" class="restart">Restart</a>
         </h1>
     </div>
     <div class="container">
         <div class="left">
-            <span>剩余时间: </span>
-            <span id="sec"> 30 </span> s </div>
+            <span>Time left: </span>
+            <span id="sec" class="scoreColor"> 30 </span> <span class="scoreColor">s</span> </div>
         <div class="right">
-            <span>分数: </span>
+            <span>Score: </span>
             <span id="score">0</span>
         </div>
         <div class="main">
@@ -31,7 +31,7 @@
                 <li class="square5 public-li">
                     <ul class="differSquare">
                         <li class="list1">
-                            <img src="img/2.png" alt="">
+                            <img src="img/banana.png" alt="">
                         </li>
                     </ul>
                 </li>
@@ -41,15 +41,17 @@
                 <img src="img/eye.png" alt="">
             </span>
         </div>
-        <button class="startGame">点 击 开 始</button>
+        <button class="startGame">START</button>
     </div>
-    <span class="crazyRotate">
-        增加难度
-    </span>
-    <span class="revertRotate">
-            一般难度
-    </span>
+    <div class="setting">
+        <span class="title">Game level:</span>
+        <span class="crazyRotate">
+            <i class="position">Difficult level</i>
+        </span>
+        <span class="revertRotate">
+            <i class="position">General level</i>
+        </span>
+    </div>
     <script src="./logic.js"></script>
 </body>
-
 </html>
